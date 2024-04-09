@@ -1,5 +1,5 @@
 const std = @import("std");
-const egg = @import("egg.zig");
+const egg = @import("./egg/egg.zig");
 const expect = std.testing.expect;
 
 fn childrenOf(tree: egg.Tree, node: egg.Node) !std.ArrayList(egg.Node) {

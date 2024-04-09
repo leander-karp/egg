@@ -1,7 +1,7 @@
-const egg_parser = @import("./egg/parser.zig");
-const egg_interpreter = @import("./egg/interpreter.zig");
-const egg_tree = @import("./egg/tree.zig");
-const egg_env = @import("./egg/environment.zig");
+const egg_parser = @import("./parser.zig");
+const egg_interpreter = @import("./interpreter.zig");
+const egg_tree = @import("./tree.zig");
+const egg_env = @import("./environment.zig");
 
 pub const EnvironmentValues = egg_env.EnvironmentValues;
 pub const FunctionValue = egg_env.FunctionValue;
