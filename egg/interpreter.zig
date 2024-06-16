@@ -387,7 +387,7 @@ pub const Interpreter = struct {
                 try self.handle_nil();
             } else {
                 var parent = self.result.nodes.get(self.current_node.parent_id.?).?;
-                var index = std.mem.indexOfScalar(t.NodeId, parent.children(), self.current_node.id).?;
+                const index = std.mem.indexOfScalar(t.NodeId, parent.children(), self.current_node.id).?;
 
                 _ = parent.value.children.orderedRemove(index);
 
@@ -429,7 +429,7 @@ pub const Interpreter = struct {
             try self.handle_nil();
         } else {
             var parent = self.result.nodes.get(self.current_node.parent_id.?).?;
-            var index = std.mem.indexOfScalar(t.NodeId, parent.children(), self.current_node.id).?;
+            const index = std.mem.indexOfScalar(t.NodeId, parent.children(), self.current_node.id).?;
 
             _ = parent.value.children.orderedRemove(index);
 
