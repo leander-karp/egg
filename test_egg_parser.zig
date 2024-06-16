@@ -34,7 +34,7 @@ test "parse empty list" {
 
     try expect(tree.nodes.count() == 1);
 
-    var root = tree.root().?;
+    const root = tree.root().?;
 
     try expect(root.value.children.items.len == 0);
 }
@@ -42,7 +42,7 @@ test "parse empty list" {
 test "parse multiple atomic values" {
     var tree = try egg.parse("(\natomic1\tatomic2\ratomic3 atomic4)\n\n", std.testing.allocator);
     defer tree.deinit();
-    var root = tree.root().?;
+    const root = tree.root().?;
     var children = try childrenOf(tree, root);
     defer children.deinit();
 

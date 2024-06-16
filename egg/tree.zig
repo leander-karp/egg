@@ -78,7 +78,7 @@ pub const Node = struct {
     }
 
     pub fn clone(self: *Self) !Self {
-        var value: NodeValue = switch (self.value) {
+        const value: NodeValue = switch (self.value) {
             .children => NodeValue{ .children = try self.value.children.clone() },
             else => self.value,
         };
@@ -160,7 +160,7 @@ pub const Tree = struct {
                     try stack.append(null);
 
                     // Add children in reverse order
-                    var children = current_node.children();
+                    const children = current_node.children();
                     i = children.len;
                     while (i > 0) : (i -= 1) {
                         try stack.append(self.nodes.get(children[i - 1]).?);
